@@ -1,4 +1,4 @@
-
+$(document).ready(function () {
 //Criteria: WHEN I open the planner, THEN the current day is displayed at the top of the calendar
 //For Day JS
 var today = dayjs();
@@ -25,7 +25,6 @@ function timeIndicator() {
     //get present hour value in the 24-hour format
     var currTime = dayjs().hour().valueOf(); 
 
-
     // Loop through business-hour time blocks 
     $(".time-block").each(function () {
         // Parsing strings as integers
@@ -34,12 +33,18 @@ function timeIndicator() {
         // Matching time blocks with the colours: past>grey , present>red, future>green
         if (timeBlocks === currTime) {
             $(this).addClass("present");
+            $(this).removeClass("past"); // Remove previous storage
+            $(this).removeClass("future");
         }
         else if (timeBlocks < currTime) {
             $(this).addClass("past");
+            $(this).removeClass("present");
+            $(this).removeClass("future");
         }
-        else {
+        else if (timeBlocks > currTime) {
             $(this).addClass("future");
+            $(this).removeClass("past");
+            $(this).removeClass("present");
         }
     })
 }
@@ -59,3 +64,4 @@ $("#hour-17 .description").val(localStorage.getItem("hour-17"));
 
 // Call function timeIndicator
 timeIndicator();
+})
