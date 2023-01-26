@@ -35,6 +35,7 @@ THEN the saved events persist
 - DayJS, Bootstrap, jQuery, and other fonts are used.
 
 ## Screenshot
+![Challenge-5](https://user-images.githubusercontent.com/48407721/214886021-c53063bd-121e-43c6-b020-3e0aa63263cd.PNG)
 
 ## Deployment link
 https://cassielawww.github.io/challenge-5-work-day-schedule/
